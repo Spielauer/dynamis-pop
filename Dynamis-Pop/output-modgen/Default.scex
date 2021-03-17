@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Scenario ScenarioVersion="1.8">
-	<General SimulationEnd="2150" Threads="6" Subsamples="6" PartialReports="0" StartingSeed="16807" ComputationPriority="THREAD_PRIORITY_NORMAL" CancelPartialResults="PARTIAL_NO" BackgroundMode="0" SilentMode="0" DistributedExecution="0" DistributedSamples="1" AccessTracking="0" TextTracking="0" CopyParameters="0" MemoryReports="0"></General>
-	<Inputs>
-		<Input>0=C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\parameters\Default\PersonCore.dat</Input>
-	</Inputs>
-</Scenario>
