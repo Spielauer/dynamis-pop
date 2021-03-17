@@ -1,0 +1,2195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Model Source Files">
+      <UniqueIdentifier>{8cccebfa-faca-4919-98d0-0f6783a23205}</UniqueIdentifier>
+      <Extensions>mpp;ompp</Extensions>
+    </Filter>
+    <Filter Include="Parameter Files">
+      <UniqueIdentifier>{734f218c-d7be-4271-b862-5f51628fca8d}</UniqueIdentifier>
+      <Extensions>dat;odat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(PCH_CXX)" />
+    <ClCompile Include="$(CUSTOM_CPP)" />
+    <ClCompile Include="$(PCH_CXX)" />
+    <ClCompile Include="$(CUSTOM_CPP)" />
+    <ClCompile Include="$(PCH_CXX)" />
+    <ClCompile Include="$(CUSTOM_CPP)" />
+    <ClCompile Include="$(PCH_CXX)" />
+    <ClCompile Include="$(CUSTOM_CPP)" />
+    <ClCompile Include="$(PCH_CXX)" />
+    <ClCompile Include="$(CUSTOM_CPP)" />
+    <ClCompile Include="$(PCH_CXX)" />
+    <ClCompile Include="$(CUSTOM_CPP)" />
+    <ClCompile Include="$(PCH_CXX)" />
+    <ClCompile Include="$(CUSTOM_CPP)" />
+    <ClCompile Include="$(PCH_CXX)" />
+    <ClCompile Include="$(CUSTOM_CPP)" />
+    <ClCompile Include="$(PCH_CXX)" />
+    <ClCompile Include="$(CUSTOM_CPP)" />
+    <ClCompile Include="$(PCH_CXX)" />
+    <ClCompile Include="$(CUSTOM_CPP)" />
+    <ClCompile Include="$(PCH_CXX)" />
+    <ClCompile Include="$(CUSTOM_CPP)" />
+    <ClCompile Include="$(PCH_CXX)" />
+    <ClCompile Include="$(CUSTOM_CPP)" />
+    <ClCompile Include="$(PCH_CXX)" />
+    <ClCompile Include="$(CUSTOM_CPP)" />
+    <ClCompile Include="$(PCH_CXX)" />
+    <ClCompile Include="$(CUSTOM_CPP)" />
+    <ClCompile Include="$(PCH_CXX)" />
+    <ClCompile Include="$(CUSTOM_CPP)" />
+    <ClCompile Include="$(PCH_CXX)" />
+    <ClCompile Include="$(CUSTOM_CPP)" />
+    <ClCompile Include="$(PCH_CXX)" />
+    <ClCompile Include="$(CUSTOM_CPP)" />
+    <ClCompile Include="$(PCH_CXX)" />
+    <ClCompile Include="$(CUSTOM_CPP)" />
+    <ClCompile Include="$(PCH_CXX)" />
+    <ClCompile Include="$(CUSTOM_CPP)" />
+    <ClCompile Include="$(PCH_CXX)" />
+    <ClCompile Include="$(CUSTOM_CPP)" />
+    <ClCompile Include="$(PCH_CXX)" />
+    <ClCompile Include="$(CUSTOM_CPP)" />
+    <ClCompile Include="$(PCH_CXX)" />
+    <ClCompile Include="$(CUSTOM_CPP)" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MODEL_CODE_DIR)/custom_early.h" />
+    <ClInclude Include="$(MODEL_CODE_DIR)/custom.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\code\ActorClock.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorObservation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorPerson.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorStartpopValues.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ClockEvents.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationBackMigration.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromPool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromScratch.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_core.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_info.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\modgen_time_based.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesPopulation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TrackingList.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextNPL.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorClock.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorObservation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorPerson.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorStartpopValues.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ClockEvents.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EmigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationBackMigration.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromPool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromScratch.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_core.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_info.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\modgen_time_based.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesPopulation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TrackingList.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextNPL.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorClock.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorObservation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorPerson.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorStartpopValues.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ClockEvents.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EmigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationBackMigration.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromPool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromScratch.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_core.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_info.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\modgen_time_based.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesPopulation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TrackingList.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextNPL.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorClock.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorObservation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorPerson.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorStartpopValues.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ClockEvents.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EmigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationBackMigration.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromPool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromScratch.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_core.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_info.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\modgen_time_based.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesPopulation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TrackingList.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextNPL.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorClock.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorObservation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorPerson.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorStartpopValues.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ClockEvents.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EmigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationBackMigration.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromPool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromScratch.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_core.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_info.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\modgen_time_based.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesPopulation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TrackingList.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextNPL.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorClock.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorObservation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorPerson.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorStartpopValues.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ClockEvents.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EmigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\Ethnicity.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationBackMigration.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromPool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromScratch.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_core.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_info.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\modgen_time_based.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesPopulation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TrackingList.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextNPL.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorClock.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorObservation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorPerson.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorStartpopValues.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ClockEvents.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EmigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\Ethnicity.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationBackMigration.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromPool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromScratch.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_core.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_info.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\modgen_time_based.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesPopulation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TrackingList.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextNPL.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorClock.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorObservation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorPerson.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorStartpopValues.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ClockEvents.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EmigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\Ethnicity.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFirstUnion.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationBackMigration.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromPool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromScratch.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_core.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_info.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\modgen_time_based.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesPopulation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TrackingList.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextNPL.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorClock.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorObservation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorPerson.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorStartpopValues.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ClockEvents.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EmigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\Ethnicity.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFirstUnion.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyPartnerMatching.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationBackMigration.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromPool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromScratch.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_core.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_info.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\modgen_time_based.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesPopulation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TrackingList.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_Annotations.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextAT.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextNPL.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextSI.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorClock.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorObservation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorPerson.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorStartpopValues.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ClockEvents.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EmigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\Ethnicity.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFemalePartnershipStatus.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFirstUnion.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyPartnerMatching.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationBackMigration.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromPool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromScratch.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_core.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_info.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\modgen_time_based.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesPopulation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TrackingList.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_Annotations.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextAT.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextNPL.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextSI.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorClock.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorObservation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorPerson.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorStartpopValues.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ClockEvents.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EmigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\Ethnicity.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFemalePartnershipStatus.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFirstUnion.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyLeavingHome.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyPartnerMatching.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationBackMigration.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromPool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromScratch.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_core.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_info.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\modgen_time_based.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesPopulation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TrackingList.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_Annotations.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextAT.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextNPL.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextSI.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorClock.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorObservation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorPerson.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorStartpopValues.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ClockEvents.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EmigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\Ethnicity.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFemalePartnershipStatus.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFirstUnion.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyLeavingHome.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyPartnerMatching.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationBackMigration.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromPool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromScratch.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_core.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_info.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\modgen_time_based.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesPopulation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TrackingList.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_Annotations.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextAT.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextNPL.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextSI.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorClock.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorObservation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorPerson.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorStartpopValues.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ClockEvents.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryTransmission.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EmigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\Ethnicity.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFemalePartnershipStatus.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFirstUnion.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyLeavingHome.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyPartnerMatching.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationBackMigration.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromPool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromScratch.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_core.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_info.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\modgen_time_based.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesPopulation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TrackingList.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_Annotations.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextAT.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextNPL.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextSI.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorClock.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorObservation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorPerson.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorStartpopValues.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ClockEvents.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryTransmission.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EmigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\Ethnicity.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFemalePartnershipStatus.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFirstUnion.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyLeavingHome.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyPartnerMatching.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationBackMigration.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromPool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromScratch.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_core.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_info.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\modgen_time_based.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesPopulation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TrackingList.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextNPL.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorClock.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorObservation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorPerson.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorStartpopValues.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ClockEvents.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPreSchool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryTracking.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryTransmission.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EmigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\Ethnicity.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFemalePartnershipStatus.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFirstUnion.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyLeavingHome.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyPartnerMatching.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationBackMigration.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromPool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromScratch.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_core.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_info.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\modgen_time_based.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesEducation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesPopulation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TrackingList.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextNPL.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorClock.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorObservation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorPerson.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorStartpopValues.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ClockEvents.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPreSchool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryPlanning.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryTracking.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryTransmission.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationSecondaryBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EmigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\Ethnicity.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFemalePartnershipStatus.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFirstUnion.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyLeavingHome.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyPartnerMatching.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationBackMigration.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromPool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromScratch.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_core.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_info.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\modgen_time_based.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesEducation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesPopulation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TrackingList.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextNPL.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorClock.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorObservation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorPerson.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorStartpopValues.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ChildVaccination.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ClockEvents.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPreSchool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryPlanning.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryTracking.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryTransmission.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationSecondaryBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EmigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\Ethnicity.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFemalePartnershipStatus.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFirstUnion.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyLeavingHome.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyPartnerMatching.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationBackMigration.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromPool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromScratch.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_core.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_info.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\modgen_time_based.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesEducation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesPopulation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TrackingList.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextNPL.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorClock.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorObservation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorPerson.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorStartpopValues.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ChildVaccination.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ClockEvents.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPreSchool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryPlanning.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryTracking.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryTransmission.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationSecondaryBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EmigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\Ethnicity.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFemalePartnershipStatus.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFirstUnion.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyLeavingHome.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyPartnerMatching.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationBackMigration.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromPool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromScratch.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_core.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_info.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\modgen_time_based.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesEducation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesPopulation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesVaccination.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TrackingList.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextNPL.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.ompp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.dat">
+      <Filter>Parameter Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.odat">
+      <Filter>Parameter Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.odat">
+      <Filter>Parameter Files</Filter>
+    </None>
+    <None Include="..\code\ActorClock.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorObservation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorPerson.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorStartpopValues.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ChildVaccination.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ClockEvents.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPreSchool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryPlanning.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryTracking.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryTransmission.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationSecondaryBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EmigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\Ethnicity.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFemalePartnershipStatus.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFirstUnion.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyLeavingHome.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyPartnerMatching.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\HumanCapitalIndex.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationBackMigration.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromPool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromScratch.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_core.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_info.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\modgen_time_based.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\Stunting.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesEducation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesFamily.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesHumanCapital.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesPopulation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesStunting.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesVaccination.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TrackingList.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextNPL.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorClock.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorObservation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorPerson.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorStartpopValues.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ChildVaccination.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ClockEvents.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPreSchool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryPlanning.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryTracking.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryTransmission.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationSecondaryBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EmigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\Ethnicity.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFemalePartnershipStatus.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFirstUnion.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyLeavingHome.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyPartnerMatching.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\HumanCapitalIndex.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationBackMigration.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromPool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromScratch.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_core.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_info.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\modgen_time_based.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\Stunting.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesEducation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesFamily.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesHumanCapital.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesPopulation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesStunting.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesVaccination.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TrackingList.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextABC.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextNPL.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorClock.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorObservation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorPerson.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ActorStartpopValues.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ClockEvents.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FamilyGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\FertilityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationBackMigration.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromPool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\ImmigrationFromScratch.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_core.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\model_info.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\modgen_time_based.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityDetailed.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MortalityGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesPopulation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TrackingList.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_Annotations.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextAT.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextNPL.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\_ContextSI.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../code/*.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.odat">
+      <Filter>Parameter Files</Filter>
+    </None>
+    <None Include="..\code\ActorCalibrator.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.odat">
+      <Filter>Parameter Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.odat">
+      <Filter>Parameter Files</Filter>
+    </None>
+    <None Include="..\code\EmigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\MigrationGeneral.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.odat">
+      <Filter>Parameter Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.odat">
+      <Filter>Parameter Files</Filter>
+    </None>
+    <None Include="..\code\MigrationBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.odat">
+      <Filter>Parameter Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.odat">
+      <Filter>Parameter Files</Filter>
+    </None>
+    <None Include="..\code\Ethnicity.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.odat">
+      <Filter>Parameter Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFirstUnion.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.odat">
+      <Filter>Parameter Files</Filter>
+    </None>
+    <None Include="..\code\FamilyPartnerMatching.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.odat">
+      <Filter>Parameter Files</Filter>
+    </None>
+    <None Include="..\code\FamilyFemalePartnershipStatus.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.odat">
+      <Filter>Parameter Files</Filter>
+    </None>
+    <None Include="..\code\FamilyLeavingHome.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.odat">
+      <Filter>Parameter Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.odat">
+      <Filter>Parameter Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryTransmission.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.odat">
+      <Filter>Parameter Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.odat">
+      <Filter>Parameter Files</Filter>
+    </None>
+    <None Include="..\code\EducationPreSchool.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesEducation.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryTracking.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.odat">
+      <Filter>Parameter Files</Filter>
+    </None>
+    <None Include="..\code\EducationPrimaryPlanning.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\EducationSecondaryBase.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.odat">
+      <Filter>Parameter Files</Filter>
+    </None>
+    <None Include="..\code\ChildVaccination.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.odat">
+      <Filter>Parameter Files</Filter>
+    </None>
+    <None Include="..\code\TablesVaccination.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.odat">
+      <Filter>Parameter Files</Filter>
+    </None>
+    <None Include="..\code\Stunting.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesStunting.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\HumanCapitalIndex.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesHumanCapital.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="..\code\TablesFamily.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.odat">
+      <Filter>Parameter Files</Filter>
+    </None>
+    <None Include="..\code\_ContextABC.mpp">
+      <Filter>Model Source Files</Filter>
+    </None>
+    <None Include="../parameters/*/*.odat">
+      <Filter>Parameter Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

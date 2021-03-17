@@ -1,0 +1,240 @@
+﻿//LABEL (TablesEducation, EN)
+/*NOTE (TablesEducation, EN) 
+*/
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Types
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//EN Age group
+partition TAB_AGEC5{ 1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95 };	
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// States
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+actor Person
+{
+    logical in_projected_time = (calendar_year >= MIN(SIM_YEAR_RANGE));         //EN In projected time
+    SIM_YEAR_RANGE tab_sim_yob = COERCE(SIM_YEAR_RANGE,year_of_birth);          //EN Year of birth
+    logical is_child = (integer_age < 15);                                      //EN Child < 15
+    logical is_old = (integer_age >= 60);                                       //EN Person 60+
+    logical is_aded0 = (!is_child && !is_old && educ_one_fate == EOL_LOW);      //EN Person 15-59 never entered primary    
+    logical is_aded1 = (!is_child && !is_old && educ_one_fate == EOL_MEDIUM);   //EN Person 15-59 uncompleted primary
+    logical is_aded2 = (!is_child && !is_old && educ_one_fate == EOL_HIGH);     //EN Person 15-59 primary graduate
+    logical has_passed_primary = (educ_one_grade_passed==MAX(EDUC_ONE_GRADE));  //EN Has passed primary
+
+    //EN Not attending primary school
+    logical tab_out_of_primary = (educ_one_status != EOS_WAIT && educ_one_status != EOS_ATTEND && !has_passed_primary);
+};
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Groups
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+table_group TG04_Education                      //EN Education
+{
+    TG04_Preschool,
+    TG04_Primary,
+    TG04_Secondary
+};
+
+table_group TG04_Preschool                      //EN Preschool
+{
+    tabPreSchool
+};
+
+table_group TG04_Primary                        //EN Primary 
+{
+    PopPyramidByEduc, 
+    TabEducFateDistrYob,
+    TabEducFateByGroup,
+    TabEduc15ByDistrict,
+    TabEduc15ByDistrictBirth,
+    TabPrimarySchoolPlanning,
+    TabPrimSchoolEntries,
+    TabPopProvAgeEducSex,
+    TabPrimSchoolEntries,
+    TabPrimSchoolGraduations,
+    TabPrimSchoolOutOfSchool9to11,
+    TabEducFateDistrYob,
+    tabEducationFateGeobirYob
+};
+
+table_group TG04_Secondary                      //EN Secondary
+{
+    TabSchool2TrackTab,
+    TabSchool2AttainmentsTab
+};
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Tables
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+table Person tabPreSchool                                       //EN Pre-School
+[ WITHIN(SIM_YEAR_RANGE,year_of_birth) && integer_age == 10]
+{
+    {
+        duration(years_preschool,0) / duration(),               //EN Proportion children without preschool decimals=3
+        duration(years_preschool,1) / duration(),               //EN Proportion children 1 year preschool decimals=3
+        duration(years_preschool,2) / duration()                //EN Proportion children 2 year preschool decimals=3
+    }
+    *geo +                                                      //EN Place
+    *tab_sim_yob                                                //EN Year of birth
+};
+
+table Person tabEducationFateGeobirYob                          //EN Primary education fate 
+[ integer_age == 1 ]
+{ 
+    sex+ *                                                      //EN Sex
+    geo_birth+ *                                                //EN Place of birth
+    {
+        duration(educ_one_fate,EOL_LOW)/duration(),             //EN Never entered decimals=3
+        duration(educ_one_fate,EOL_MEDIUM)/duration(),          //EN Dropout decimals=3
+        duration(educ_one_fate,EOL_HIGH)/duration()             //EN Graduate decimals=3
+    }
+    * year_of_birth                                             //EN Year of birth
+};
+
+table Person PopPyramidByEduc                   //EN Population pyramids by education and district
+[in_sel_years && is_resident]
+{
+    sel_years *
+    sex + *
+    geo_nat + *
+    split(integer_age, TAB_AGEC5) *             //EN Age group
+    {
+        duration(educ_one_level,EOL_LOW),       //EN Never entered primary school
+        duration(educ_one_level,EOL_MEDIUM),    //EN Primary school non-completer
+        duration(educ_one_level,EOL_HIGH)       //EN Primary school graduate
+    }
+};
+
+table Person TabEducFateByGroup                 //EN Primary education fate by parents education
+[in_projected_time && trigger_changes(calendar_year) && integer_age == 0 && creation_type == CT_BIRTH]
+{
+    educ1_group + *                             //EN Group
+    {
+        unit                                    //EN Persons
+    }
+    * tab_sim_yob                               //EN Year of birth
+    * educ_one_fate +                           //EN Primary education fate
+};
+
+table Person TabPrimarySchoolPlanning   //EN Students by grade, required teachers and classrooms
+[in_projected_time && trigger_changes(calendar_year) && is_educ_one_student && is_resident]
+{
+    geo_nat + *                                 //EN Geo
+    {
+        unit,                                   //EN Students
+        value_out(educ_one_required_teachers),  //EN Number of teachers required
+        value_out(educ_one_required_rooms)      //EN Number of classrooms    
+    }
+    * sim_year                                  //EN Year
+    * educ_one_grade +                          //EN Primary grade
+};
+
+table Person TabPopProvAgeEducSex	//EN Population by district, age group, sex and education
+[in_projected_time && is_resident]
+{
+    geo_nat + *                     //EN Geo
+    sex + *                         //EN Sex
+    {
+        duration(is_child,TRUE),    //EN Children < 15
+        duration(is_aded0, TRUE),   //EN Persons 15-59 never entered primary school
+        duration(is_aded1, TRUE),   //EN Persons 15-59 primary school non-completer
+        duration(is_aded2, TRUE),   //EN Persons 15-59 primary school graduate
+        duration(is_old,TRUE)       //EN Persons 60+
+    }
+    * sim_year                      //EN Calendar Year        
+};
+
+table Person TabEducFateDistrYob    //EN Primary education fate by region of birth
+[trigger_changes(calendar_year) && integer_age == 0 && is_resident]
+{
+    aggregate(region_birth, REGION_NAT) + *                  //EN Region of birth
+    {
+        unit
+    }
+    * year_of_birth                                          //EN Year of birth
+    * educ_one_fate +                                        //EN Year
+};
+
+table Person TabEduc15ByDistrict      //EN Education composition of 15 year old by district of residence 
+[integer_age == 15 && in_projected_time && is_resident]
+{
+    geo_nat + *
+    sex + *
+    {
+        duration(educ_one_fate,EOL_LOW)    / duration(),    //EN Never entered primary school decimals=4
+        duration(educ_one_fate,EOL_MEDIUM) / duration(),    //EN Primary school non-completer decimals=4
+        duration(educ_one_fate,EOL_HIGH)   / duration()     //EN Primary school graduate decimals=4
+    }
+    * sim_year
+};
+
+table Person TabEduc15ByDistrictBirth      //EN Education composition of 15 year old by district of birth
+[integer_age == 15 && in_projected_time && is_resident]
+{
+    geo_birth + *                                           //EN Place of birth
+    sex + *                                                 //EN Sex
+    {
+        duration(educ_one_fate,EOL_LOW)    / duration(),    //EN Never entered primary school decimals=4
+        duration(educ_one_fate,EOL_MEDIUM) / duration(),    //EN Primary school non-completer decimals=4
+        duration(educ_one_fate,EOL_HIGH)   / duration()     //EN Primary school graduate decimals=4
+    }
+    * sim_year                                              //EN Year
+};
+
+table Person TabPrimSchoolEntries                           //EN Primary school new entries by district
+[in_projected_time && is_resident]
+{
+    {
+        entrances(educ_one_grade_attended,1)                //EN School entries
+    }
+    * sim_year                                              //EN Year
+    * geo_nat +                                             //EN Go
+};
+
+table Person TabPrimSchoolGraduations                       //EN Primary school graduations by district
+[in_projected_time && is_resident]
+{
+    {
+        entrances(has_passed_primary,TRUE)                  //EN School Graduates
+    }
+    * sim_year                                              //EN Year
+    * geo_nat +                                             //EN Geo
+};
+
+table Person TabPrimSchoolOutOfSchool9to11                  //EN Out of school children age 9-11 by district
+[in_projected_time && is_resident && integer_age >= 9 && integer_age <= 11]
+{
+    {
+        duration(tab_out_of_primary,TRUE)/duration()        //EN Out of school decimals=4
+    }
+    * sim_year                                              //EN Year
+    * geo_nat+                                              //EN Geo
+};
+
+table Person TabSchool2TrackTab                             //EN Secondary School Enrolment
+[trigger_changes(calendar_year) && in_projected_time && is_resident && educ_two_status == ETS_ATTEND]
+{
+    {
+        unit                                                //EN Students
+    }
+    * sim_year                                              //EN Year
+    * educ_two_grade_attended +                             //EN Highest secondary grade attended
+};
+
+table Person TabSchool2AttainmentsTab                       //EN Secondary school attainments of population 20-24
+[in_projected_time && is_resident && integer_age >= 20 && integer_age < 25]
+{
+    sex+ *                                                  //EN Sex
+    {
+        duration(educ_two_level, ETL_NEVER)/duration(),     //EN Never attended secondary decimals=4
+        duration(educ_two_level, ETL_INCOMPLETE)/duration(),//EN Incomplete secondary decimals=4
+        duration(educ_two_level, ETL_GRADUATE)/duration()   //EN Graduate decimals=4
+    }
+    * sim_year                                              //EN Year
+};

@@ -1,0 +1,34 @@
+//LABEL(ompp_framework, EN) OpenM++ simulation framework
+/* NOTE(ompp_framework, EN)
+This module specifies the simulation framework and supplies function definitions required by the OpenM++ framework.  This module is ignored by the Modgen compiler. From a developers perspective, two model constants set in this module are of importance
+
+- The constant for the maximum number of random number streams
+- The scaling factor 
+
+The scaling factor refers to the actor weight; the according Modgen functions Set_actor_weight(ScalingFactor) and Set_actor_subsample_weight(ScalingFactor) called in the Start() function are ignored by the OpenM++ compiler. Also, in contrast to OpenM++, Modgen has no limit to the number of random number streams.
+*/
+
+#include "omc/omSimulation.h" // For IDE
+#if 0 // Hide from IDE
+// The following modules will be compiled and assembled in this order
+// after all model-specific modules.
+use "common.ompp";
+use "common_modgen.ompp";
+use "random/random_lcg41.ompp";
+use "time_based/time_based_common.ompp";
+#endif
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// openM++ Model constants
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+namespace fmk 
+{
+    // Maximum number of random streams in the model (increase if insufficient)
+    const int model_streams = 100;
+}
+
+double population_scaling_factor()
+{
+    return ScalingFactor;
+}

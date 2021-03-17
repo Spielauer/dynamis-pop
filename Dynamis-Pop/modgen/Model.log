@@ -1,0 +1,85 @@
+﻿  
+  Creating modules ...
+  
+  Parser - supported languages
+  
+  Parser - types, model type & version, links
+  
+  Parser - parameters, user tables, aggregations
+  
+  Parser - actors, parameter extensions
+  
+  Parser - actors
+  
+  Parser - tables, options, actor sets, strings
+  
+  Parser - parameter and table groups, tracking
+  
+  Parser - hidden tables, parameters, dependency
+  
+  Scanning Symbol Notes ...
+  
+  Scanning Symbol Labels ...
+  
+  Marking Up input files ...
+../code\EducationPrimaryBase.mpp(134): warning : Unable to determine actor type when reading state educ_one_fate.
+../code\EducationPrimaryTracking.mpp(233): warning : Unable to determine actor type when assigning state educ_one_to_process.
+../code\EducationSecondaryBase.mpp(268): warning : Unable to determine actor type when assigning state educ_two_to_process.
+../code\FamilyFemalePartnershipStatus.mpp(134): warning : Unable to determine actor type when assigning state is_blocked_from_marriage.
+  
+  Creating output files ...
+  
+  Removing special markup ...
+  
+  Mapping symbols to modules ...
+  
+  Modgen: 0 errors - 4 warnings
+  pch.cxx
+  ACTORS.CPP
+  ActorCalibrator.cpp
+  ActorClock.cpp
+  ActorObservation.cpp
+  ActorPerson.cpp
+  ActorStartpopValues.cpp
+  ChildVaccination.cpp
+  ClockEvents.cpp
+  EducationPreSchool.cpp
+  EducationPrimaryBase.cpp
+  EducationPrimaryPlanning.cpp
+  EducationPrimaryTracking.cpp
+  EducationPrimaryTransmission.cpp
+  EducationSecondaryBase.cpp
+  EmigrationBase.cpp
+  Ethnicity.cpp
+  FamilyFemalePartnershipStatus.cpp
+  FamilyFirstUnion.cpp
+  FamilyGeneral.cpp
+  FamilyLeavingHome.cpp
+  FamilyPartnerMatching.cpp
+  FertilityBase.cpp
+  FertilityDetailed.cpp
+  FertilityGeneral.cpp
+  HumanCapitalIndex.cpp
+  ImmigrationBackMigration.cpp
+  ImmigrationFromPool.cpp
+  ImmigrationFromScratch.cpp
+  MigrationBase.cpp
+  MigrationGeneral.cpp
+  MortalityBase.cpp
+  MortalityDetailed.cpp
+  MortalityGeneral.cpp
+  Stunting.cpp
+  TABINIT.CPP
+  TablesEducation.cpp
+  TablesFamily.cpp
+  TablesHumanCapital.cpp
+  TablesPopulation.cpp
+  TablesStunting.cpp
+  TablesVaccination.cpp
+  TrackingList.cpp
+  _ContextABC.cpp
+  _ContextNPL.cpp
+  model_core.cpp
+  model_info.cpp
+  modgen_time_based.cpp
+  Model.vcxproj -> C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\modgen\bin\Dynamis-Pop-3-06-ABC.exe

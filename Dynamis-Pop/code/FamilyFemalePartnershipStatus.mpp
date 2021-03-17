@@ -1,0 +1,224 @@
+﻿//LABEL (FamilyFemalePartnershipStatus, EN)
+/*NOTE (FamilyFemalePartnershipStatus, EN) 
+This module implements processes for maintaining the partnership status of women over the life course (union formation, dissolution, calls for matching a suitable partner). The female partnership status is updated yearly according to observed partnership patterns by education, age, and age of the youngest child. The partnership status is modelled for all women within the age range FEMALE_SPOUSE_AGE; no union formation events happen at higher ages above this range; also, at these higher ages it is assumed that the only union dissolution is due to widowhood.
+
+**Parameters:**
+
+- Proportion of women living with dependent children who are in a partnership by education, age group, and age group of the youngest child.
+- Proportion of women not living with dependent children who are in a partnership by education and age.
+
+The model maintains the patterns contained in the parameters in the future. Thus we assume that these patterns are stable and changes in aggregate partnership characteristics only result from compositional changes in the female population like childlessness and timing of births. The model follows a 'minimum necessary corrections' approach changing the union status of women only to meet aggregate numbers. In reality, unions are more unstable, i.e. the model does not move women out of a union and others in if the aggregate proportion does not change. It could be refined e.g. by adding a union dissolution module at the micro-level if longitudinal consistency is essential for model applications. The current version is longitudinally consistent only on the cohort level and by lifetime childlessness versus motherhood. 
+
+The module is combined with the module FamilyFirstUnion which models first union formation  and sets the state ever_union. The module of first unions is respected in this module, i.e. no women can be moved into a partnership if they have not been in a first union. Example: if all parameters of this module are set to 100% (all women of in the age range FEMALE_SPOUSE_AGE should be in a union regardless of any other characteristics) the module would move all women who ever entered a first union into a new union whenever a union is dissolved due to the eath of the spouse)
+
+*/
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Actor Sets
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//EN Women living with dependent children
+actor_set Person asWomenWithChildren[union1_group][child_agegr][moth_agegr][has_spouse]
+    filter is_alive && sex == FEMALE && WITHIN(FEMALE_SPOUSE_AGE, integer_age) &&
+    lives_with_dependent_child && is_mortal && !is_blocked_from_marriage; 
+
+//EN Women not living with dependent children
+actor_set Person asWomenNoChildren[union1_group][female_spouse_age][has_spouse]
+    filter is_alive && sex == FEMALE && WITHIN(FEMALE_SPOUSE_AGE, integer_age) &&
+    !lives_with_dependent_child && is_mortal && !is_blocked_from_marriage;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Dimensions
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+partition   CHILD_AGEGR_PART { 1,3,6,9,12,15 };        //EN Age of youngest child
+partition   MOTH_AGEGR_PART { 20, 25, 30, 35, 40 };    //EN Age of mother at last birth
+
+classification MOTH_AGEGR //EN Age group mothers at birth
+{
+    CMA20,  //EN Below 20
+    CMA25,  //EN 20 to 24
+    CMA30,  //EN 25 to 19
+    CMA35,  //EN 30 to 34
+    CMA40,  //EN 35 to 39
+    CMA40P  //EN 40+
+};
+
+classification CHILD_AGEGR //EN Age group child
+{
+    CA00,  //EN 0
+    CA01,  //EN 1 to 2
+    CA03,  //EN 3 to 5
+    CA06,  //EN 6 to 8
+    CA09,  //EN 9 to 11
+    CA12,  //EN 12 to 14
+    CA15   //EN 15 to 17
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Parameters
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+parameters
+{
+    //EN Probability to be in a partnership - Females living with children
+    double InUnionProbWithChildren[UNION1_GROUP][CHILD_AGEGR][MOTH_AGEGR];
+
+    //EN Probability to be in a partnership - Females not living with children
+    double InUnionProbNoChildren[FEMALE_SPOUSE_AGE][UNION1_GROUP];
+};
+
+parameter_group PG07_FemalePartnerships         //EN Female Partnership Status
+{
+    InUnionProbWithChildren,
+    InUnionProbNoChildren
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Actor States & Functions
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+actor Person
+{
+    //EN Age of youngest child 
+    double  age_youngest_child = (sex == FEMALE && count(mlHHMotherChildren) > 0) ?
+        double(min_over(mlHHMotherChildren, integer_age)) : TIME_INFINITE;
+
+    //EN Age group of youngest child of women
+    int child_agegr_part = split(age_youngest_child, CHILD_AGEGR_PART);
+
+    //EN Person lives with a child 
+    logical lives_with_dependent_child = ((sex == FEMALE && count(mlHHMotherChildren) > 0) ||
+        (sex == MALE && count(mlHHFatherChildren) > 0)) ? TRUE : FALSE;
+
+    //EN Woman's age at last birth if living with children < 18
+    double age_last_birth = (lives_with_dependent_child) ?
+        integer_age - age_youngest_child : TIME_INFINITE;
+
+    //EN Age group at last birth
+    int moth_agegr_part = split(age_last_birth, MOTH_AGEGR_PART);
+
+    //EN Age group at last birth
+    MOTH_AGEGR moth_agegr = (moth_agegr_part == 0) ? CMA20 :
+        (moth_agegr_part == 1) ? CMA25 :
+        (moth_agegr_part == 2) ? CMA30 :
+        (moth_agegr_part == 3) ? CMA35 :
+        (moth_agegr_part == 4) ? CMA40 : CMA40P;
+
+    //EN Age group child
+    CHILD_AGEGR child_agegr = (child_agegr_part == 0) ? CA00 :
+        (child_agegr_part == 1) ? CA01 :
+        (child_agegr_part == 2) ? CA03 :
+        (child_agegr_part == 3) ? CA06 :
+        (child_agegr_part == 4) ? CA09 :
+        (child_agegr_part == 5) ? CA12 : CA15;
+
+    logical is_blocked_from_marriage = { FALSE };       //EN Is blocked from getting married
+};
+
+actor Clock
+{
+    void UpdatePartnershipStatus();                     //EN Update Female Partnership Status
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Implementation
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void Clock::UpdatePartnershipStatus()
+{
+    long nTarget;
+    if (clock_year >= MIN(SIM_YEAR_RANGE))
+    {
+        // unblock all 
+        for (long nJ = 0; nJ < asAllPerson->Count(); nJ++) asAllPerson->Item(nJ)->is_blocked_from_marriage=FALSE;
+
+        // Women with children
+        for (int nGroup = 0; nGroup < SIZE(UNION1_GROUP); nGroup++)
+        {
+            for (int nChildAge = 0; nChildAge < SIZE(CHILD_AGEGR); nChildAge++)
+            {
+                for (int nMothAge = 0; nMothAge < SIZE(MOTH_AGEGR); nMothAge++)
+                {
+                    long nGroupSize = asWomenWithChildren[nGroup][nChildAge][nMothAge][FALSE]->Count()
+                                    + asWomenWithChildren[nGroup][nChildAge][nMothAge][TRUE]->Count();
+
+                    nTarget = round(InUnionProbWithChildren[nGroup][nChildAge][nMothAge] * nGroupSize);
+
+                    if (nTarget > asWomenWithChildren[nGroup][nChildAge][nMothAge][TRUE]->Count())
+                    {
+                        // block those who cannot enter union as !ever_union 
+                        long nSize = asWomenWithChildren[nGroup][nChildAge][nMothAge][FALSE]->Count();
+                        long nIndex = 0;
+                        for (long nJ = 0; nJ < nSize; nJ++)
+                        {
+                            auto nPers = asWomenWithChildren[nGroup][nChildAge][nMothAge][FALSE]->Item(nIndex);
+                            if (nPers->ever_union) nIndex++;
+                            else nPers->is_blocked_from_marriage = TRUE;
+                        }
+
+                        // move some into marriage until target met
+                        while (nTarget > asWomenWithChildren[nGroup][nChildAge][nMothAge][TRUE]->Count() &&
+                            asWomenWithChildren[nGroup][nChildAge][nMothAge][FALSE]->Count() > 0) 
+                        {
+                            auto prFam = asWomenWithChildren[nGroup][nChildAge][nMothAge][FALSE]->GetRandom(RandUniform(55));
+                            if (!prFam->FindSpouse()) prFam->is_blocked_from_marriage = TRUE;
+                        }
+                    }
+                    else if (nTarget < asWomenWithChildren[nGroup][nChildAge][nMothAge][TRUE]->Count())
+                    {
+                        while (nTarget < asWomenWithChildren[nGroup][nChildAge][nMothAge][TRUE]->Count() &&
+                            asWomenWithChildren[nGroup][nChildAge][nMothAge][TRUE]->Count() > 0)
+                        {
+                            auto prFam = asWomenWithChildren[nGroup][nChildAge][nMothAge][TRUE]->GetRandom(RandUniform(57));
+                            prFam->doDissolveUnion();
+                        }
+                    }
+                }
+            }
+        }
+        //Targets for women without children in hh
+        for (int nGroup = 0; nGroup < SIZE(UNION1_GROUP); nGroup++)
+        {
+            for (int nAge = 0; nAge < SIZE(FEMALE_SPOUSE_AGE); nAge++)
+            {
+                nTarget = round(InUnionProbNoChildren[nAge][nGroup] 
+                    * (asWomenNoChildren[nGroup][nAge][FALSE]->Count() + asWomenNoChildren[nGroup][nAge][TRUE]->Count()));
+
+                if (nTarget > asWomenNoChildren[nGroup][nAge][TRUE]->Count())
+                {
+                    // block those who cannot enter union as !ever_union 
+                    long nSize = asWomenNoChildren[nGroup][nAge][FALSE]->Count();
+                    long nIndex = 0;
+                    for (long nJ = 0; nJ < nSize; nJ++)
+                    {
+                        auto nPers = asWomenNoChildren[nGroup][nAge][FALSE]->Item(nIndex);
+                        if (nPers->ever_union) nIndex++;
+                        else nPers->is_blocked_from_marriage = TRUE;
+                    }
+
+                    // move some into marriage until target met
+                    while (nTarget > asWomenNoChildren[nGroup][nAge][TRUE]->Count() &&
+                        asWomenNoChildren[nGroup][nAge][FALSE]->Count() > 0) 
+                    {
+                        auto prFam = asWomenNoChildren[nGroup][nAge][FALSE]->GetRandom(RandUniform(58));
+                        if (!prFam->FindSpouse()) prFam->is_blocked_from_marriage = TRUE;
+                    }
+                }
+                else if (nTarget < asWomenNoChildren[nGroup][nAge][TRUE]->Count())
+                {
+                    while (nTarget < asWomenNoChildren[nGroup][nAge][TRUE]->Count() &&
+                        asWomenNoChildren[nGroup][nAge][TRUE]->Count() > 0)
+                    {
+                        auto prFam = asWomenNoChildren[nGroup][nAge][TRUE]->GetRandom(RandUniform(39));
+                        prFam->doDissolveUnion();
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+

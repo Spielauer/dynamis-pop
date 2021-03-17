@@ -1,0 +1,69 @@
+//LABEL(ImmigrationFromPool, EN) Immigration from Pool
+
+/* NOTE(ImmigrationFromPool, EN)
+This module implements immigration from an immigration pool of the starting population file
+*/
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Parameters
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+parameters
+{
+    logical ModelImmigrationFromPools;                                  //EN Model immigration pools
+    double  ImmiPoolSize[IMMI_POOL][SIM_YEAR_RANGE];                    //EN Number of immigrants
+    cumrate ImmiPoolDestination[IMMI_POOL][SIM_YEAR_RANGE][GEO_NAT];    //EN Destination of immigrants
+};
+
+parameter_group PG04_ImmigrationPool                                    //EN Immigration from pools
+{
+    ModelImmigrationFromPools,
+    ImmiPoolSize,
+    ImmiPoolDestination
+};
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Actor states and functions
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+actor Person
+{
+    //EN First immigration of immigrants from scratch
+    event timeFirstImmigrationFromPoolEvent, FirstImmigrationFromPoolEvent;
+};
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Implementation
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+TIME Person::timeFirstImmigrationFromPoolEvent()
+{
+    // return the time of first immigration set in the start function for oldest person in the family
+    if (!ever_resident && creation_type == CT_POOL ) return time_of_first_immigration;
+    else return TIME_INFINITE;
+}
+
+void Person::FirstImmigrationFromPoolEvent()
+{
+    // Sample a destination
+    int nGeo;
+
+    Lookup_ImmiPoolDestination(RandUniform(18), (int)lStartValues->StartPopValue[PMC_POOL] - 1, RANGE_POS(SIM_YEAR_RANGE,calendar_year), &nGeo);
+
+    // Go Yourself
+    doResidentialMove((GEO)nGeo);
+
+    // Take your family
+    if (lSpouse) lSpouse->doResidentialMove((GEO)nGeo);
+    if (children_in_household > 0)
+    {
+        int nIndex;
+        auto prChild = (sex == FEMALE) ? mlHHMotherChildren->GetNext(0, &nIndex) : mlHHFatherChildren->GetNext(0, &nIndex);
+        while (prChild)
+        {
+            prChild->doResidentialMove((GEO)nGeo);
+            // set pointer to next child
+            prChild = (sex == FEMALE) ? mlHHMotherChildren->GetNext(nIndex + 1, &nIndex) : mlHHFatherChildren->GetNext(nIndex + 1, &nIndex);
+        }
+    }
+}

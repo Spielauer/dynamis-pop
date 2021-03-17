@@ -1,0 +1,269 @@
+﻿  Start omc
+  Compile source from: ../code
+  Compile source into: C:/Users/Martin/Dropbox/openM++/models/Dynamis-Pop-3-06-ABC/ompp/src
+  use folder: C:\Users\Martin\Dropbox\openM++/use/
+  Parsing ../code/ActorCalibrator.mpp
+  Parsing ../code/ActorClock.mpp
+  Parsing ../code/ActorObservation.mpp
+  Parsing ../code/ActorPerson.mpp
+  Parsing ../code/ActorStartpopValues.mpp
+  Parsing ../code/ChildVaccination.mpp
+  Parsing ../code/ClockEvents.mpp
+  Parsing ../code/EducationPreSchool.mpp
+  Parsing ../code/EducationPrimaryBase.mpp
+  Parsing ../code/EducationPrimaryPlanning.mpp
+  Parsing ../code/EducationPrimaryTracking.mpp
+  Parsing ../code/EducationPrimaryTransmission.mpp
+  Parsing ../code/EducationSecondaryBase.mpp
+  Parsing ../code/EmigrationBase.mpp
+  Parsing ../code/Ethnicity.mpp
+  Parsing ../code/FamilyFemalePartnershipStatus.mpp
+  Parsing ../code/FamilyFirstUnion.mpp
+  Parsing ../code/FamilyGeneral.mpp
+  Parsing ../code/FamilyLeavingHome.mpp
+  Parsing ../code/FamilyPartnerMatching.mpp
+  Parsing ../code/FertilityBase.mpp
+  Parsing ../code/FertilityDetailed.mpp
+  Parsing ../code/FertilityGeneral.mpp
+  Parsing ../code/HumanCapitalIndex.mpp
+  Parsing ../code/ImmigrationBackMigration.mpp
+  Parsing ../code/ImmigrationFromPool.mpp
+  Parsing ../code/ImmigrationFromScratch.mpp
+  Parsing ../code/MigrationBase.mpp
+  Parsing ../code/MigrationGeneral.mpp
+  Parsing ../code/MortalityBase.mpp
+  Parsing ../code/MortalityDetailed.mpp
+  Parsing ../code/MortalityGeneral.mpp
+  Parsing ../code/Stunting.mpp
+  Parsing ../code/TablesEducation.mpp
+  Parsing ../code/TablesFamily.mpp
+  Parsing ../code/TablesHumanCapital.mpp
+  Parsing ../code/TablesPopulation.mpp
+  Parsing ../code/TablesStunting.mpp
+  Parsing ../code/TablesVaccination.mpp
+  Parsing ../code/TrackingList.mpp
+  Parsing ../code/_ContextABC.mpp
+  Parsing ../code/_ContextNPL.mpp
+  Parsing ../code/model_core.mpp
+  Parsing ../code/model_info.mpp
+  Skipping ../code/modgen_time_based.mpp
+  Parsing ../code/ompp_framework.ompp
+  Parsing C:\Users\Martin\Dropbox\openM++/use/common.ompp
+  Parsing C:\Users\Martin\Dropbox\openM++/use/common_modgen.ompp
+  Parsing C:\Users\Martin\Dropbox\openM++/use/random/random_lcg41.ompp
+  Parsing C:\Users\Martin\Dropbox\openM++/use/time_based/time_based_common.ompp
+  Parsing C:\Users\Martin\Dropbox\openM++/use/time_based/time_based_core.ompp
+  Parsing C:\Users\Martin\Dropbox\openM++/use/time_based/time_based_modgen.ompp
+  Compile scenario parameters from: ../parameters/Default
+  Parsing ../parameters/Default/Framework.odat
+  Parsing ../parameters/Default/PersonCore.dat
+  Parsing ../parameters/Default/scenario_info.odat
+  Post-parse processing
+../code/MortalityGeneral.mpp(49): warning : entity member function 'Person::HandleMortality' was declared but has no definition.
+omc : warning : Multiple PreSimulation functions with no suffix
+  To disambiguate multiple PreSimulation functions, append a numeric suffix
+  Read parameters from .csv or .tsv files: ../parameters/Default/
+  2 warnings in post-parse phase
+  Code & meta-data generation
+  Meta-data processing
+  Scenario processing: Default
+  71 of 71 parameters processed
+  Finalize scenario processing: Default
+  Finish omc
+  pch.cxx
+  om_definitions.cpp
+  om_developer.cpp
+C:\Users\Martin\Dropbox\openM++\include\omc\Entity.h(285,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data (compiling source file src/om_definitions.cpp)
+C:\Users\Martin\Dropbox\openM++\include\omc\Entity.h(285,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data (compiling source file src/om_developer.cpp)
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\code\ActorPerson.mpp(160,52): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data (compiling source file src/om_developer.cpp)
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\code\ChildVaccination.mpp(68,61): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file src/om_developer.cpp)
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\code\EducationPrimaryTracking.mpp(134,56): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src/om_developer.cpp)
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\code\EducationPrimaryTracking.mpp(139,58): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src/om_developer.cpp)
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\code\EducationSecondaryBase.mpp(168,88): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file src/om_developer.cpp)
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\code\EducationSecondaryBase.mpp(169,78): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file src/om_developer.cpp)
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\code\FamilyFemalePartnershipStatus.mpp(146,36): warning C4244: '=': conversion from 'double' to 'long', possible loss of data (compiling source file src/om_developer.cpp)
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\code\FamilyFemalePartnershipStatus.mpp(185,32): warning C4244: '=': conversion from 'double' to 'long', possible loss of data (compiling source file src/om_developer.cpp)
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\code\FertilityGeneral.mpp(119,32): warning C4244: 'argument': conversion from 'const Time_t' to 'int', possible loss of data (compiling source file src/om_developer.cpp)
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\code\ImmigrationFromPool.mpp(51,143): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data (compiling source file src/om_developer.cpp)
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\code\ImmigrationFromScratch.mpp(160,145): warning C4244: 'argument': conversion from 'double' to 'size_t', possible loss of data (compiling source file src/om_developer.cpp)
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\code\MortalityDetailed.mpp(177,44): warning C4244: '=': conversion from 'double' to 'long', possible loss of data (compiling source file src/om_developer.cpp)
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(927,85): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(931,94): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(934,32): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(943,85): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(947,94): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(950,32): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(964,84): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(968,93): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(971,32): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(985,80): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(989,89): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(992,32): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(1001,86): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(1005,95): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(1008,32): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(1020,83): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(1024,92): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(1027,32): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(1039,91): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(1043,100): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(1046,32): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(1058,84): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(1062,93): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(1065,32): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(1077,87): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(1081,96): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(1084,32): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(1098,85): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(1102,94): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(1105,32): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(1115,98): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(1119,107): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(1122,32): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(4428,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(4495,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(4535,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(4552,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(4569,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(4599,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(4659,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(4699,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(4716,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(4747,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(4821,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(4861,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(4878,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(4895,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(4912,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(4943,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5017,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5057,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5074,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5091,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5108,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5139,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5185,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5223,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5254,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5300,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5338,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5369,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5478,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5518,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5535,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5552,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5569,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5586,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5603,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5620,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5637,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5654,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5688,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5748,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5788,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5805,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5836,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5917,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5957,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5974,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(5991,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6008,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6025,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6056,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6116,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6156,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6173,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6203,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6256,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6296,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6326,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6379,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6419,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6449,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6509,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6549,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6566,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6597,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6643,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6681,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6697,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6713,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6743,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6817,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6857,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6874,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6891,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6908,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6938,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(6984,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(7022,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(10690,62): warning C4267: 'argument': conversion from 'size_t' to 'T', possible loss of data
+          with
+          [
+              T=counter
+          ]
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(10726,62): warning C4267: 'argument': conversion from 'size_t' to 'T', possible loss of data
+          with
+          [
+              T=counter
+          ]
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17002,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17055,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17095,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17126,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17200,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17240,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17257,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17274,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17291,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17322,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17431,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17471,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17488,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17505,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17522,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17539,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17556,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17573,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17590,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17607,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17638,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17705,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17745,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17762,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17779,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17810,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17863,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17902,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17932,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(17985,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(18025,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(18055,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(18129,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(18169,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(18186,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(18203,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(18220,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(18252,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(18305,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(18344,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(18359,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(18389,16): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(18442,26): warning C4267: '/=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(18481,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(18496,43): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Martin\Dropbox\openM++\include\omc\cumrate.h(96,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data (compiling source file src/om_definitions.cpp)
+C:\Users\Martin\Dropbox\openM++\include\omc\cumrate.h(89): message : while compiling class template member function 'int cumrate_distribution<3>::draw(double)' (compiling source file src/om_definitions.cpp)
+C:\Users\Martin\Dropbox\openM++\include\omc\cumrate.h(170): message : see reference to function template instantiation 'int cumrate_distribution<3>::draw(double)' being compiled (compiling source file src/om_definitions.cpp)
+C:\Users\Martin\Dropbox\openM++\include\omc\cumrate.h(191): message : see reference to class template instantiation 'cumrate_distribution<3>' being compiled (compiling source file src/om_definitions.cpp)
+C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\src\om_definitions.cpp(1108): message : see reference to class template instantiation 'cumrate<3,3>' being compiled
+C:\Users\Martin\Dropbox\openM++\include\omc\cumrate.h(105,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data (compiling source file src/om_definitions.cpp)
+  om_fixed_parms.cpp
+  custom.cpp
+C:\Users\Martin\Dropbox\openM++\include\omc\Entity.h(285,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data (compiling source file src/om_fixed_parms.cpp)
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 7717 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Model.vcxproj -> C:\Users\Martin\Dropbox\openM++\models\Dynamis-Pop-3-06-ABC\ompp\bin\Dynamis-Pop-3-06-ABC64.exe
+  Starting openM++ UI: http://localhost:51470

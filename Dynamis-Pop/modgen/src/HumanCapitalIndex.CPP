@@ -1,0 +1,142 @@
+﻿#include "model.h"
+static int HaveAGoodDay;
+namespace mm {
+#line 1 "../code/HumanCapitalIndex.mpp"
+//LABEL (HumanCapitalIndex, EN) Human Capital Index
+
+/* NOTE(HumanCapitalIndex, EN)
+This module calculates the components of the Human Capital Index and individual human capital. The Human Capital Index (HCI) measures the human capital that a
+child born today can expect to attain by age 18, given the risks to poor health and poor education that prevail in the country where she lives. The HCI follows the trajectory from birth to adulthood of a child born today.
+
+Components:
+
+- Child survival up to the 5th birthday
+- Years of schooling age 4-18 (max 14 years) including up to two years of pre-school
+- Quality of education to quality-adjust the years of schooling. This measure is based on test scores
+- Stunting in the first 5 years of life: the impaired growth and development that children experience from poor nutrition, repeated infection, and inadequate psychosocial stimulation. Children are defined as stunted if their height-for-age is more than two standard deviations below the WHO Child Growth Standards median.
+- Adult survival from 15 to 60.
+
+Formula:
+
+On the population level, the HCI is calculated by multiplying up its components in the following form.
+
+.. code::
+
+   HCI  = [Child Survival to 5th birthday]
+            * exp(0.08 * ([average years of schooling] * [average quality of schooling] - 14))
+            * exp((0.65 * ([adult_survival] - 1.0) + 0.35 * ([proportion children not stunted] - 1.0)) / 2.0);
+
+
+The individual human capital can be calculated from the individual life experience of each actor at the moment of her death. Note that, if the components of the human capital are correlated (which is the case as e.g. stunting affects school success) the average of the individual human capital will be different from the aggregate HCI calculated from the average values of the components. At the individual level, the individual human capital IHC is:
+
+.. code::
+
+   IHC  = [survived first five years of life y/n]
+            * exp(0.08 * ([individual years of schooling] * [individual quality of schooling] - 14))
+            * exp((0.65 * ([survived to age 60] - 1.0) + 0.35 * ([not stunted age 0-4 y/n] - 1.0)) / 2.0);
+
+
+This module implements the calculation of some of the components of the index as well as the index itself. Most components are addressed in dedicated separate modules or can be derived from recorded life course information stemming from other modules, e.g. schooling and survival. The only component implemented here is the quality of schooling: we use a simple normal distribution with parameters for the average and the standard deviation.
+
+In the core of this module is the function CalculateHCIVariables() which is called at the mortality event. Note that for proper calculation, individuals have to life their while life in the country, thus emigration should be switched off for the analysis of the HCI.
+*/
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Types
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//classification SCHOOL_QUALITY_PARA          //EN School Quality Parameters
+//{
+//    SQP_AV,                                 //EN Average
+//    SQP_SD                                  //EN Standard Deviation
+//};
+
+//classification HCI_COEF                     //EN Human Capital Index Coefficients
+//{
+//    HCI_EDUC,                               //EN Return to education
+//    HCI_ASR,                                //EN Adult survival return
+//    HCI_STUNT                               //EN Return of not stunted
+//};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Parameters
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//parameters
+//{
+//    double SchoolQuality[REGION_NAT][SCHOOL_QUALITY_PARA];      //EN Quality of schooling
+//    double HCICoefficients[HCI_COEF];                           //EN HCI Coefficients
+//};
+
+//parameter_group PG_HumanCapitalIndex        //EN Human Capital Index
+//{
+//    ProportionStunting,
+//    PreSchoolAttendance,
+//    SchoolQuality,
+//    HCICoefficients
+//};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Actor declarations
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//actor Person
+//{
+//    //EN In population for hci calculation
+//    logical in_hci_sample = (creation_type == CT_BIRTH && geo_birth < SIZE(GEO_NAT)) ? TRUE : FALSE;
+//
+//    //EN Total years of schooling
+//    int years_of_schooling = years_preschool + educ_one_grade_passed + educ_two_grade_passed;
+//
+//    //EN Quality of schooling
+//    double quality_of_schooling = { 0.0 };      //EN Quality of schooling
+//
+//    //EN Quality adjusted schooling
+//    double quality_adjusted_schooling = { 0.0 };
+//
+//    //EN Calculate HCI variables
+//    void CalculateHCIVariables(); 
+//
+//    //EN Survived early years
+//    logical survived_early_years = (integer_age >= 5) ? TRUE : FALSE;
+//
+//    //EN Adult survival (proportion of age 18-60 alive)
+//    double adult_survival = { 0.0 };
+//
+//    //EN Enters adulthood
+//    logical is_adult = (integer_age >= 15) ? TRUE : FALSE;
+//
+//    //EN Individual HCI
+//    double ind_hci = { 0.0 };
+//};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Implementation
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void Person::CalculateHCIVariables()
+{
+    if (in_hci_sample )
+    {
+        // Quality of schooling
+        double dQ = gprParam->SchoolQuality[CHKBND(region_birth ,5,"SchoolQuality",0)][CHKBND(SQP_AV,2,"SchoolQuality",1)]
+            + RandNormal(82) * gprParam->SchoolQuality[CHKBND(region_birth ,5,"SchoolQuality",0)][CHKBND(SQP_SD,2,"SchoolQuality",1)];
+        if (dQ > 0.0 &&  age >= 5)  quality_of_schooling =   dQ ;
+
+        // adult survival
+        //double dA = age; if (dA > 60.0) dA = 60.0;
+        //if (integer_age >= 15) adult_survival = (dA - 15.0) / 45.0;
+        if ( integer_age >= 60)  adult_survival =   1 ; else  adult_survival =   0.0 ;
+
+        // individual hci
+         ind_hci =   
+            survived_early_years * exp(gprParam->HCICoefficients[CHKBND(HCI_EDUC,3,"HCICoefficients",0)] * ( years_of_schooling *  quality_of_schooling - 14.0))
+            * exp((gprParam->HCICoefficients[CHKBND(HCI_ASR,3,"HCICoefficients",0)] * ( adult_survival - 1.0) + gprParam->HCICoefficients[CHKBND(HCI_STUNT,3,"HCICoefficients",0)] * (! is_stunted - 1.0)) / 2.0) ;
+
+
+    }
+}
+
+
+
+} // namespace 

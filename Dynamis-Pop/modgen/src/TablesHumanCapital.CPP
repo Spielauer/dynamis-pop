@@ -1,0 +1,75 @@
+﻿#include "model.h"
+static int HaveAGoodDay;
+namespace mm {
+#line 1 "../code/TablesHumanCapital.mpp"
+//LABEL (TablesHumanCapital, EN)
+/*NOTE (TablesHumanCapital, EN) 
+*/
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// Human Capital Index (HCI) Tables
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//table_group TG_HCI             //EN Human Capital Index
+//{
+//    
+//    tabHCI, TabHCIDistrict
+//};
+
+
+//table Person tabHCI       //EN HCI by geo
+//[in_projected_time && in_hci_sample && year_of_birth >= MIN(SIM_YEAR_RANGE)]
+//{
+//    sex + *
+//    aggregate(region_birth, REGION_NAT)+ *              //EN Region of birth
+//
+//    {
+//        //EN Stunting rate decimals=4
+//        value_at_transitions(is_alive, TRUE, FALSE, is_stunted) / transitions(is_alive, TRUE, FALSE),
+//
+//        //EN Child survival rate decimals=4
+//        value_at_transitions(is_alive, TRUE, FALSE, survived_early_years) / transitions(is_alive, TRUE, FALSE),
+//
+//        //EN Adult survival rate 15-60 decimals=4
+//        value_at_transitions(is_alive, TRUE, FALSE, adult_survival) / transitions(integer_age, 14, 15),
+//
+//        //EN Average quality of schooling decimals=4
+//        value_at_transitions(is_alive, TRUE, FALSE, quality_of_schooling) / transitions(survived_early_years, FALSE,TRUE),
+//
+//        //EN Average years of schooling decimals=4
+//        value_at_transitions(is_alive, TRUE, FALSE, years_of_schooling) / transitions(survived_early_years, FALSE,TRUE),
+//
+//        //EN Average individual level HCI decimals=4
+//        value_at_transitions(is_alive, TRUE, FALSE, ind_hci) / transitions(is_alive, TRUE, FALSE)
+//    }
+//    * tab_sim_yob
+//};
+
+//table Person TabHCIDistrict       //EN HCI by district
+//[in_projected_time && in_hci_sample && year_of_birth >= MIN(SIM_YEAR_RANGE)]
+//{
+//    sex + *
+//    aggregate(geo_birth, GEO_NAT)+ *              //EN District of birth
+//
+//    {
+//        //EN Stunting rate decimals=4
+//        value_at_transitions(is_alive, TRUE, FALSE, is_stunted) / transitions(is_alive, TRUE, FALSE),
+//
+//        //EN Child survival rate decimals=4
+//        value_at_transitions(is_alive, TRUE, FALSE, survived_early_years) / transitions(is_alive, TRUE, FALSE),
+//
+//        //EN Adult survival rate 15-60 decimals=4
+//        value_at_transitions(is_alive, TRUE, FALSE, adult_survival) / transitions(integer_age, 14, 15),
+//
+//        //EN Average quality of schooling decimals=4
+//        value_at_transitions(is_alive, TRUE, FALSE, quality_of_schooling) / transitions(survived_early_years, FALSE,TRUE),
+//
+//        //EN Average years of schooling decimals=4
+//        value_at_transitions(is_alive, TRUE, FALSE, years_of_schooling) / transitions(survived_early_years, FALSE,TRUE),
+//
+//        //EN Average individual level HCI decimals=4
+//        value_at_transitions(is_alive, TRUE, FALSE, ind_hci) / transitions(is_alive, TRUE, FALSE)
+//    }
+//    * tab_sim_yob
+//};
+} // namespace 

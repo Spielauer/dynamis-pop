@@ -1,0 +1,622 @@
+//LABEL(_ContextNPL, EN) Context Nepal 2001
+
+/* NOTE(_ContextNPL, EN)
+This module contains time-sesitive ranges and geographical informations specific to the model version.
+*/
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//// Starting population 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//classification PERSON_MICRODATA_COLUMNS             //EN Starting population variables
+//{
+//    PMC_FAMID,                                      //EN Family ID
+//    PMC_WEIGHT,                                     //EN Weight
+//    PMC_ROLE,                                       //EN Role in family
+//    PMC_BIRTH,                                      //EN Time of birth
+//    PMC_SEX,                                        //EN Sex
+//    PMC_EDUC,                                       //EN Primary education status
+//    PMC_SECGRAD,                                    //EN Highest secondary grade attended
+//    PMC_SECATTEND,                                  //EN Currently attending secondary education
+//    PMC_UNION,                                      //EN Time of first union formation
+//    PMC_PARITY,                                     //EN Parity
+//    PMC_LASTBIR,                                    //EN Time of last birth
+//    PMC_ETHNO,                                      //EN Ethnicity
+//    PMC_GEO,                                        //EN Place of residence
+//    PMC_GEOBIR,                                     //EN Place of residence at birth
+//    PMC_GEOPRE,                                     //EN Pervious place of residence
+//    PMC_MOVEFIRST,                                  //EN Time of first move
+//    PMC_MOVELAST,                                   //EN Time of last move
+//    PMC_POOL                                        //EN Immigration Pool
+//};
+//
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//// Dimensions
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//range YOB_EDUC_TRANS1 { 1989, 2051 };               //EN Year of birth
+//range YOB_EDUC_TRANS2 { 1985, 2051 };               //EN Year of birth
+//
+//range FEMALE_SPOUSE_AGE { 10, 60 };                 //EN Age
+//range MALE_SPOUSE_AGE { 15, 100 };                  //EN Age 
+//
+//range ALL_YEAR_RANGE { 1900, 2101 };                //EN All calendar years
+//range SIM_YEAR_RANGE { 2001, 2101 };                //EN Projected calendar 
+//range CHILD_MORTALITY_YEARS { 2006, 2101 };         //EN Calendar year
+//
+//
+//range AGE_RANGE { 0, 100 };                         //EN Age range
+//range FERTILE_AGE_RANGE { 12, 49 };                 //EN Fertile age range
+//
+//range YOB_UNION { 1952, 2038 };                     //EN Year of birth
+//partition IMMU_YOB_PART{ 1970,1975,1980 };          //EN Birth Cohort
+//
+//classification POP_POOL                             //EN Population Pool
+//{
+//    PP_NON,                                         //EN Not a pool
+//    PP_STUDENTS,                                    //EN Students
+//    PP_WORKER,                                      //EN Worker
+//    PP_REFUGEES                                     //EN Refugees
+//};
+//
+//classification IMMI_POOL                            //EN Immigration Pool
+//{
+//    IP_STUDENTS,                                    //EN Students
+//    IP_WORKER,                                      //EN Worker
+//    IP_REFUGEES                                     //EN Refugees
+//};
+//
+//classification GEO            //EN Smallest Geographical Units
+//{
+//    GEO_00,                   //EN Taplejung
+//    GEO_01,                   //EN Panchthar
+//    GEO_02,                   //EN Ilam
+//    GEO_03,                   //EN Jhapa
+//    GEO_04,                   //EN Morang
+//    GEO_05,                   //EN Sunsari
+//    GEO_06,                   //EN Dhankuta
+//    GEO_07,                   //EN Terhathum
+//    GEO_08,                   //EN Sankhuwasabha
+//    GEO_09,                   //EN Bhojpur
+//    GEO_10,                   //EN Solukhumbu
+//    GEO_11,                   //EN Okhaldhunga
+//    GEO_12,                   //EN Khotang
+//    GEO_13,                   //EN Udayapur
+//    GEO_14,                   //EN Saptari
+//    GEO_15,                   //EN Siraha
+//    GEO_16,                   //EN Dhanusa
+//    GEO_17,                   //EN Mahottari
+//    GEO_18,                   //EN Sarlahi
+//    GEO_19,                   //EN Sindhuli
+//    GEO_20,                   //EN Ramechhap
+//    GEO_21,                   //EN Dolakha
+//    GEO_22,                   //EN Sindhupalchok
+//    GEO_23,                   //EN Kavrepalanchok
+//    GEO_24,                   //EN Lalitpur
+//    GEO_25,                   //EN Bhaktapur
+//    GEO_26,                   //EN Kathmandu
+//    GEO_27,                   //EN Nuwakot
+//    GEO_28,                   //EN Rasuwa
+//    GEO_29,                   //EN Dhading
+//    GEO_30,                   //EN Makwanpur
+//    GEO_31,                   //EN Rautahat
+//    GEO_32,                   //EN Bara
+//    GEO_33,                   //EN Parsa
+//    GEO_34,                   //EN Chitawan
+//    GEO_35,                   //EN Gorkha
+//    GEO_36,                   //EN Lamjung
+//    GEO_37,                   //EN Tanahu
+//    GEO_38,                   //EN Syangja
+//    GEO_39,                   //EN Kaski
+//    GEO_40,                   //EN Manang
+//    GEO_41,                   //EN Mustang
+//    GEO_42,                   //EN Myagdi
+//    GEO_43,                   //EN Parbat
+//    GEO_44,                   //EN Baglung
+//    GEO_45,                   //EN Gulmi
+//    GEO_46,                   //EN Palpa
+//    GEO_47,                   //EN Nawalparasi
+//    GEO_48,                   //EN Rupandehi
+//    GEO_49,                   //EN Kapilbastu
+//    GEO_50,                   //EN Arghakhanchi
+//    GEO_51,                   //EN Pyuthan
+//    GEO_52,                   //EN Rolpa
+//    GEO_53,                   //EN Rukum
+//    GEO_54,                   //EN Salyan
+//    GEO_55,                   //EN Dang
+//    GEO_56,                   //EN Banke
+//    GEO_57,                   //EN Bardiya
+//    GEO_58,                   //EN Surkhet
+//    GEO_59,                   //EN Dailekh
+//    GEO_60,                   //EN Jajarkot
+//    GEO_61,                   //EN Dolpa
+//    GEO_62,                   //EN Jumla
+//    GEO_63,                   //EN Kalikot
+//    GEO_64,                   //EN Mugu
+//    GEO_65,                   //EN Humla
+//    GEO_66,                   //EN Bajura
+//    GEO_67,                   //EN Bajhang
+//    GEO_68,                   //EN Achham
+//    GEO_69,                   //EN Doti
+//    GEO_70,                   //EN Kailali
+//    GEO_71,                   //EN Kanchanpur
+//    GEO_72,                   //EN Dadeldhura
+//    GEO_73,                   //EN Baitadi
+//    GEO_74,                   //EN Darchula
+//    GEO_ABROAD                //EN Abroad
+//};
+//
+//classification GEO_ABR        //EN Foreign Geo
+//{
+//    GEOA_00                   //EN Abroad  
+//};
+//
+//classification GEO_NAT        //EN Districts
+//{
+//    GEON_00,                   //EN Taplejung
+//    GEON_01,                   //EN Panchthar
+//    GEON_02,                   //EN Ilam
+//    GEON_03,                   //EN Jhapa
+//    GEON_04,                   //EN Morang
+//    GEON_05,                   //EN Sunsari
+//    GEON_06,                   //EN Dhankuta
+//    GEON_07,                   //EN Terhathum
+//    GEON_08,                   //EN Sankhuwasabha
+//    GEON_09,                   //EN Bhojpur
+//    GEON_10,                   //EN Solukhumbu
+//    GEON_11,                   //EN Okhaldhunga
+//    GEON_12,                   //EN Khotang
+//    GEON_13,                   //EN Udayapur
+//    GEON_14,                   //EN Saptari
+//    GEON_15,                   //EN Siraha
+//    GEON_16,                   //EN Dhanusa
+//    GEON_17,                   //EN Mahottari
+//    GEON_18,                   //EN Sarlahi
+//    GEON_19,                   //EN Sindhuli
+//    GEON_20,                   //EN Ramechhap
+//    GEON_21,                   //EN Dolakha
+//    GEON_22,                   //EN Sindhupalchok
+//    GEON_23,                   //EN Kavrepalanchok
+//    GEON_24,                   //EN Lalitpur
+//    GEON_25,                   //EN Bhaktapur
+//    GEON_26,                   //EN Kathmandu
+//    GEON_27,                   //EN Nuwakot
+//    GEON_28,                   //EN Rasuwa
+//    GEON_29,                   //EN Dhading
+//    GEON_30,                   //EN Makwanpur
+//    GEON_31,                   //EN Rautahat
+//    GEON_32,                   //EN Bara
+//    GEON_33,                   //EN Parsa
+//    GEON_34,                   //EN Chitawan
+//    GEON_35,                   //EN Gorkha
+//    GEON_36,                   //EN Lamjung
+//    GEON_37,                   //EN Tanahu
+//    GEON_38,                   //EN Syangja
+//    GEON_39,                   //EN Kaski
+//    GEON_40,                   //EN Manang
+//    GEON_41,                   //EN Mustang
+//    GEON_42,                   //EN Myagdi
+//    GEON_43,                   //EN Parbat
+//    GEON_44,                   //EN Baglung
+//    GEON_45,                   //EN Gulmi
+//    GEON_46,                   //EN Palpa
+//    GEON_47,                   //EN Nawalparasi
+//    GEON_48,                   //EN Rupandehi
+//    GEON_49,                   //EN Kapilbastu
+//    GEON_50,                   //EN Arghakhanchi
+//    GEON_51,                   //EN Pyuthan
+//    GEON_52,                   //EN Rolpa
+//    GEON_53,                   //EN Rukum
+//    GEON_54,                   //EN Salyan
+//    GEON_55,                   //EN Dang
+//    GEON_56,                   //EN Banke
+//    GEON_57,                   //EN Bardiya
+//    GEON_58,                   //EN Surkhet
+//    GEON_59,                   //EN Dailekh
+//    GEON_60,                   //EN Jajarkot
+//    GEON_61,                   //EN Dolpa
+//    GEON_62,                   //EN Jumla
+//    GEON_63,                   //EN Kalikot
+//    GEON_64,                   //EN Mugu
+//    GEON_65,                   //EN Humla
+//    GEON_66,                   //EN Bajura
+//    GEON_67,                   //EN Bajhang
+//    GEON_68,                   //EN Achham
+//    GEON_69,                   //EN Doti
+//    GEON_70,                   //EN Kailali
+//    GEON_71,                   //EN Kanchanpur
+//    GEON_72,                   //EN Dadeldhura
+//    GEON_73,                   //EN Baitadi
+//    GEON_74                    //EN Darchula
+//};
+//
+//classification REGION_NAT       //EN Region
+//{
+//    REGN_00,                    //EN Eastern
+//    REGN_01,                    //EN Central
+//    REGN_02,                    //EN Western
+//    REGN_03,                    //EN Mid-Western
+//    REGN_04                     //EN Far-Western
+//};
+//
+//classification REGION_INT       //EN Region
+//{
+//    REGI_00,                    //EN Eatern
+//    REGI_01,                    //EN Central
+//    REGI_02,                    //EN Western
+//    REGI_03,                    //EN Mid-Western
+//    REGI_04,                    //EN Far-Western
+//    REGI_ABROAD                 //EN Abroad
+//};
+//
+//
+////EN Aggregation Region International to National (use with filter is_resident only )
+//aggregation REGION_NAT, REGION_INT
+//{
+//    REGN_00, REGI_00,
+//    REGN_01, REGI_01,
+//    REGN_02, REGI_02,
+//    REGN_03, REGI_03,
+//    REGN_04, REGI_04,
+//    REGN_04, REGI_ABROAD
+//};
+//
+////EN Aggregation District to Region
+//aggregation REGION_INT, GEO
+//{
+//    REGI_00, GEO_00,
+//    REGI_00, GEO_01,
+//    REGI_00, GEO_02,
+//    REGI_00, GEO_03,
+//    REGI_00, GEO_04,
+//    REGI_00, GEO_05,
+//    REGI_00, GEO_06,
+//    REGI_00, GEO_07,
+//    REGI_00, GEO_08,
+//    REGI_00, GEO_09,
+//    REGI_00, GEO_10,
+//    REGI_00, GEO_11,
+//    REGI_00, GEO_12,
+//    REGI_00, GEO_13,
+//    REGI_00, GEO_14,
+//    REGI_00, GEO_15,
+//    REGI_01, GEO_16,
+//    REGI_01, GEO_17,
+//    REGI_01, GEO_18,
+//    REGI_01, GEO_19,
+//    REGI_01, GEO_20,
+//    REGI_01, GEO_21,
+//    REGI_01, GEO_22,
+//    REGI_01, GEO_23,
+//    REGI_01, GEO_24,
+//    REGI_01, GEO_25,
+//    REGI_01, GEO_26,
+//    REGI_01, GEO_27,
+//    REGI_01, GEO_28,
+//    REGI_01, GEO_29,
+//    REGI_01, GEO_30,
+//    REGI_01, GEO_31,
+//    REGI_01, GEO_32,
+//    REGI_01, GEO_33,
+//    REGI_01, GEO_34,
+//    REGI_02, GEO_35,
+//    REGI_02, GEO_36,
+//    REGI_02, GEO_37,
+//    REGI_02, GEO_38,
+//    REGI_02, GEO_39,
+//    REGI_02, GEO_40,
+//    REGI_02, GEO_41,
+//    REGI_02, GEO_42,
+//    REGI_02, GEO_43,
+//    REGI_02, GEO_44,
+//    REGI_02, GEO_45,
+//    REGI_02, GEO_46,
+//    REGI_02, GEO_47,
+//    REGI_02, GEO_48,
+//    REGI_02, GEO_49,
+//    REGI_02, GEO_50,
+//    REGI_03, GEO_51,
+//    REGI_03, GEO_52,
+//    REGI_03, GEO_53,
+//    REGI_03, GEO_54,
+//    REGI_03, GEO_55,
+//    REGI_03, GEO_56,
+//    REGI_03, GEO_57,
+//    REGI_03, GEO_58,
+//    REGI_03, GEO_59,
+//    REGI_03, GEO_60,
+//    REGI_03, GEO_61,
+//    REGI_03, GEO_62,
+//    REGI_03, GEO_63,
+//    REGI_03, GEO_64,
+//    REGI_03, GEO_65,
+//    REGI_04, GEO_66,
+//    REGI_04, GEO_67,
+//    REGI_04, GEO_68,
+//    REGI_04, GEO_69,
+//    REGI_04, GEO_70,
+//    REGI_04, GEO_71,
+//    REGI_04, GEO_72,
+//    REGI_04, GEO_73,
+//    REGI_04, GEO_74,
+//    REGI_ABROAD, GEO_ABROAD
+//};
+//
+//classification ETHNICITY                        //EN Ethnic Group
+//{
+//    ETHNO_00,                                   //EN Hill
+//    ETHNO_01,                                   //EN Hill Adibasi/Janajati
+//    ETHNO_02,                                   //EN Hill low caste or Dalits
+//    ETHNO_03,                                   //EN Madhesi caste origin I
+//    ETHNO_04,                                   //EN Madhesi caste origin II
+//    ETHNO_05,                                   //EN Madhesi caste origin III
+//    ETHNO_06,                                   //EN Madhesi (Tarai) Adibasi/Janajati
+//    ETHNO_07,                                   //EN Mulsim
+//    ETHNO_08,                                   //EN Other
+//    ETHNO_09                                    //EN Unidentified
+//};
+//
+//classification ETHNICITY_SHORT                  //EN Ethnic Group
+//{
+//    ES_00,                                      //EN Brahaman/Chhetri - (High Caste)
+//    ES_01,                                      //EN Tarai/Madhesi - (Medium Caste)
+//    ES_02,                                      //EN Hill Dalits - (Low Caste Hill)
+//    ES_03,                                      //EN Tarai/Madhesi Dalits - (Low Caste Other)
+//    ES_04,                                      //EN Newar/Janajati
+//    ES_05,                                      //EN Muslim
+//    ES_06                                       //EN Other
+//};
+//
+//
+//aggregation ETHNICITY_SHORT, ETHNICITY          //EN Aggregation Ethnicity to simplified Ethnicity
+//{
+//    ES_00, ETHNO_00,                            // Brahaman/Chhetri - (High Caste)
+//    ES_00, ETHNO_03,                            // Brahaman/Chhetri - (High Caste)
+//    ES_01, ETHNO_04,                            // Tarai/Madhesi - (Medium Caste)
+//    ES_02, ETHNO_02,                            // Hill Dalits - (Low Caste Hill)
+//    ES_03, ETHNO_05,                            // Tarai/Madhesi Dalits - (Low Caste Other)
+//    ES_04, ETHNO_01,                            // Newar/Janajati
+//    ES_04, ETHNO_06,                            // Newar/Janajati
+//    ES_05, ETHNO_07,                            // Muslim
+//    ES_06, ETHNO_08,                            // Other
+//    ES_06, ETHNO_09                             // Other
+//};
+//
+//classification BIRTH1_LOC                       //EN Geographical Location
+//{
+//    B1L_00,                                     //EN Eastern
+//    B1L_01,                                     //EN Central
+//    B1L_02,                                     //EN Western
+//    B1L_03,                                     //EN Mid-Western
+//    B1L_04                                      //EN Far-Western
+//};
+//
+//
+//aggregation BIRTH1_LOC, GEO                     //EN Aggregation Geo to Birth Location
+//{
+//    B1L_00, GEO_00,
+//    B1L_00, GEO_01,
+//    B1L_00, GEO_02,
+//    B1L_00, GEO_03,
+//    B1L_00, GEO_04,
+//    B1L_00, GEO_05,
+//    B1L_00, GEO_06,
+//    B1L_00, GEO_07,
+//    B1L_00, GEO_08,
+//    B1L_00, GEO_09,
+//    B1L_00, GEO_10,
+//    B1L_00, GEO_11,
+//    B1L_00, GEO_12,
+//    B1L_00, GEO_13,
+//    B1L_00, GEO_14,
+//    B1L_00, GEO_15,
+//    B1L_01, GEO_16,
+//    B1L_01, GEO_17,
+//    B1L_01, GEO_18,
+//    B1L_01, GEO_19,
+//    B1L_01, GEO_20,
+//    B1L_01, GEO_21,
+//    B1L_01, GEO_22,
+//    B1L_01, GEO_23,
+//    B1L_01, GEO_24,
+//    B1L_01, GEO_25,
+//    B1L_01, GEO_26,
+//    B1L_01, GEO_27,
+//    B1L_01, GEO_28,
+//    B1L_01, GEO_29,
+//    B1L_01, GEO_30,
+//    B1L_01, GEO_31,
+//    B1L_01, GEO_32,
+//    B1L_01, GEO_33,
+//    B1L_01, GEO_34,
+//    B1L_02, GEO_35,
+//    B1L_02, GEO_36,
+//    B1L_02, GEO_37,
+//    B1L_02, GEO_38,
+//    B1L_02, GEO_39,
+//    B1L_02, GEO_40,
+//    B1L_02, GEO_41,
+//    B1L_02, GEO_42,
+//    B1L_02, GEO_43,
+//    B1L_02, GEO_44,
+//    B1L_02, GEO_45,
+//    B1L_02, GEO_46,
+//    B1L_02, GEO_47,
+//    B1L_02, GEO_48,
+//    B1L_02, GEO_49,
+//    B1L_02, GEO_50,
+//    B1L_03, GEO_51,
+//    B1L_03, GEO_52,
+//    B1L_03, GEO_53,
+//    B1L_03, GEO_54,
+//    B1L_03, GEO_55,
+//    B1L_03, GEO_56,
+//    B1L_03, GEO_57,
+//    B1L_03, GEO_58,
+//    B1L_03, GEO_59,
+//    B1L_03, GEO_60,
+//    B1L_03, GEO_61,
+//    B1L_03, GEO_62,
+//    B1L_03, GEO_63,
+//    B1L_03, GEO_64,
+//    B1L_03, GEO_65,
+//    B1L_04, GEO_66,
+//    B1L_04, GEO_67,
+//    B1L_04, GEO_68,
+//    B1L_04, GEO_69,
+//    B1L_04, GEO_70,
+//    B1L_04, GEO_71,
+//    B1L_04, GEO_72,
+//    B1L_04, GEO_73,
+//    B1L_04, GEO_74,
+//    B1L_04, GEO_ABROAD
+//};
+//
+////EN Aggregation District International to National (use with filter is_resident only)
+//aggregation GEO_NAT, GEO
+//{
+//    GEON_00, GEO_00,
+//    GEON_01, GEO_01,
+//    GEON_02, GEO_02,
+//    GEON_03, GEO_03,
+//    GEON_04, GEO_04,
+//    GEON_05, GEO_05,
+//    GEON_06, GEO_06,
+//    GEON_07, GEO_07,
+//    GEON_08, GEO_08,
+//    GEON_09, GEO_09,
+//    GEON_10, GEO_10,
+//    GEON_11, GEO_11,
+//    GEON_12, GEO_12,
+//    GEON_13, GEO_13,
+//    GEON_14, GEO_14,
+//    GEON_15, GEO_15,
+//    GEON_16, GEO_16,
+//    GEON_17, GEO_17,
+//    GEON_18, GEO_18,
+//    GEON_19, GEO_19,
+//    GEON_20, GEO_20,
+//    GEON_21, GEO_21,
+//    GEON_22, GEO_22,
+//    GEON_23, GEO_23,
+//    GEON_24, GEO_24,
+//    GEON_25, GEO_25,
+//    GEON_26, GEO_26,
+//    GEON_27, GEO_27,
+//    GEON_28, GEO_28,
+//    GEON_29, GEO_29,
+//    GEON_30, GEO_30,
+//    GEON_31, GEO_31,
+//    GEON_32, GEO_32,
+//    GEON_33, GEO_33,
+//    GEON_34, GEO_34,
+//    GEON_35, GEO_35,
+//    GEON_36, GEO_36,
+//    GEON_37, GEO_37,
+//    GEON_38, GEO_38,
+//    GEON_39, GEO_39,
+//    GEON_40, GEO_40,
+//    GEON_41, GEO_41,
+//    GEON_42, GEO_42,
+//    GEON_43, GEO_43,
+//    GEON_44, GEO_44,
+//    GEON_45, GEO_45,
+//    GEON_46, GEO_46,
+//    GEON_47, GEO_47,
+//    GEON_48, GEO_48,
+//    GEON_49, GEO_49,
+//    GEON_50, GEO_50,
+//    GEON_51, GEO_51,
+//    GEON_52, GEO_52,
+//    GEON_53, GEO_53,
+//    GEON_54, GEO_54,
+//    GEON_55, GEO_55,
+//    GEON_56, GEO_56,
+//    GEON_57, GEO_57,
+//    GEON_58, GEO_58,
+//    GEON_59, GEO_59,
+//    GEON_60, GEO_60,
+//    GEON_61, GEO_61,
+//    GEON_62, GEO_62,
+//    GEON_63, GEO_63,
+//    GEON_64, GEO_64,
+//    GEON_65, GEO_65,
+//    GEON_66, GEO_66,
+//    GEON_67, GEO_67,
+//    GEON_68, GEO_68,
+//    GEON_69, GEO_69,
+//    GEON_70, GEO_70,
+//    GEON_71, GEO_71,
+//    GEON_72, GEO_72,
+//    GEON_73, GEO_73,
+//    GEON_74, GEO_74,
+//    GEON_74, GEO_ABROAD
+//};
+//
+//
+//actor Person
+//{
+//    //EN In selected year
+//    logical in_sel_years = calendar_year == 2001 || calendar_year == 2011
+//        || calendar_year == 2021 || calendar_year == 2031 || calendar_year == 2041
+//        || calendar_year == 2051 || calendar_year == 2061;
+//
+//    //EN Year
+//    TAB_SEL_YEARS sel_years = (calendar_year == 2001) ? TSY_2001 :
+//        (calendar_year == 2011) ? TSY_2011 :
+//        (calendar_year == 2021) ? TSY_2021 :
+//        (calendar_year == 2031) ? TSY_2031 :
+//        (calendar_year == 2041) ? TSY_2041 :
+//        (calendar_year == 2051) ? TSY_2051 : TSY_2061;
+//
+//};
+//
+//classification  TAB_SEL_YEARS           //EN Selected Years
+//{
+//    TSY_2001,                           //EN 2001
+//    TSY_2011,                           //EN 2011
+//    TSY_2021,                           //EN 2021
+//    TSY_2031,                           //EN 2031
+//    TSY_2041,                           //EN 2041
+//    TSY_2051,                           //EN 2051
+//    TSY_2061                            //EN 2061
+//};
+//
+//classification PRENATCARE_PARA          //EN Prenatal care parameters
+//{
+//    PP_CONSTANT,                        //EN Constant
+//    PP_EDUCMO_1,                        //EN Mother education 'medium'
+//    PP_EDUCMO_2,                        //EN Mother education 'high'
+//    PP_REGION_1,                        //EN Central region (Eastern is reference)
+//    PP_REGION_2,                        //EN Western region
+//    PP_REGION_3,                        //EN Mid-Western region
+//    PP_REGION_4,                        //EN Far-Western region
+//    PP_COHORT_1,                        //EN Birth cohorts of mother 1970-1974 (<1970 is reference)
+//    PP_COHORT_2,                        //EN Birth cohorts of mother  1975-1979
+//    PP_COHORT_3,                        //EN Birth cohorts of mother  1980+
+//    PP_YOUNGMO                          //EN Young Mother (age < 18)
+//};
+//
+//classification VACCINATION_PARA         //EN Child immunization parameters
+//{
+//    IP_CONSTANT,                        //EN Constant
+//    IP_MALE,                            //EN Male
+//    IP_EDUCMO_1,                        //EN Mother education 'medium'
+//    IP_EDUCMO_2,                        //EN Mother education 'high'
+//    IP_REGION_1,                        //EN Central region (Eastern is reference)
+//    IP_REGION_2,                        //EN Western region
+//    IP_REGION_3,                        //EN Mid-Western region
+//    IP_REGION_4,                        //EN Far-Western region
+//    IP_ETNO_1,                          //EN Tarai/Madhesi - Medium Caste (Brahaman/Chhetri - High Caste is reference)
+//    IP_ETNO_2,                          //EN Hill Dalits - (Low Caste Hill)
+//    IP_ETNO_3,                          //EN Tarai/Madhesi Dalits - (Low Caste Other)
+//    IP_ETNO_4,                          //EN Newar/Janajati
+//    IP_ETNO_5,                          //EN Muslim
+//    IP_ETNO_6,                          //EN Other
+//    IP_COHORT_1,                        //EN Birth cohorts of mother 1970-1974 (<1970 is reference)
+//    IP_COHORT_2,                        //EN Birth cohorts of mother  1975-1979
+//    IP_COHORT_3,                        //EN Birth cohorts of mother  1980+
+//    IP_YOUNGMO                          //EN Young Mother (age < 18)
+//};

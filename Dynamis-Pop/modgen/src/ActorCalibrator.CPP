@@ -1,0 +1,75 @@
+﻿#include "model.h"
+static int HaveAGoodDay;
+namespace mm {
+#line 1 "../code/ActorCalibrator.mpp"
+//LABEL (ActorCalibrator, EN) Definition and initialization of the Calibrator actor
+
+/* NOTE(ActorCalibrator, EN)
+This module contains the basic information associated with a Calibrator actor. The Calibration actor is a single actor used for alignment and calibration routines. 
+
+The Calibration actor is used in various modules, implementing specific functionalities which require this central actor. For example, if birth or death events are aligned to a base process which generates the events, the Calibrator is used to search and return the person with the currently shortest waiting time according to a more detailed model (which is aligned to the base model). 
+
+The Calibrator actor can also be used to centrally store values (like calibration factors), which apply to all individuals or groups. Such values can be interpreted like parameters. Unlike parameters, they do not have to be known at the start of the simulation; also, they can change over time.
+*/
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Actor Sets
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//actor_set Calibrator asCalibrator;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Links
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//EN Link between Person and Calibrator
+//link Calibrator.mlCalibratorToPerson[] Person.lCalibrator;	
+              
+//EN Link between Clock and Calibrator
+//link Calibrator.lCalibratorToClock Clock.lClockToCalibrator;
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Actor states and functions
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//actor Calibrator                                                                                //EN Central calibrator actor
+//{
+//    
+//    ALL_YEAR_RANGE calibrator_year = COERCE(ALL_YEAR_RANGE,lCalibratorToClock->clock_year);     //EN Calendar Year
+//    void CalibratorYearEnd();                                                                   //EN Year end
+//    void Start();                                                                               //EN Starts the Calibrator
+//    void Finish();                                                                              //EN Finishes the Calibrator
+//};
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Implementation
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void Calibrator::CalibratorYearEnd()
+{
+    // things to do at the end of each year
+    SetEduc1AdjustmentFactors();
+}
+
+void Calibrator::Start( )
+{ if (__finished) {StartAfterFinish(); return; }; StartSpecial1();
+    // Initialize all attributes (OpenM++).
+    initialize_attributes();
+
+    // Setting the actor weight (Modgen only)
+    Set_actor_weight(gprParam->ScalingFactor); Set_actor_subsample_weight(gprParam->ScalingFactor);
+
+     Set_lCalibratorToClock(  asClock->Item(0) );
+     poStateFunctions->Set_time(  lCalibratorToClock ->UpdateTime() -> time , true );
+
+    // Have the entity enter the simulation (OpenM++).
+    enter_simulation();
+StartSpecial2();}
+
+void Calibrator::Finish()
+{
+    // Have the entity exit the simulation (OpenM++).
+    exit_simulation();
+if (__finished) {	DoubleFinish(case_seed);	return; } else __finished = TRUE;FinishSpecial();}
+
+} // namespace 

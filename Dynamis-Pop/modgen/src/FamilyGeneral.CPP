@@ -1,0 +1,261 @@
+﻿#include "model.h"
+static int HaveAGoodDay;
+namespace mm {
+#line 1 "../code/FamilyGeneral.mpp"
+//LABEL(FamilyGeneral, EN) Family General
+
+/* NOTE(FamilyGeneral, EN)
+This module handles and maintains family links. Family links are links between spouses, links between children and their biological parents, and of children with their social parents or guardians with whom they currently live in a household. The module implements nuclear family households, consisting of a household head, and - if present - a spouse and dependent children. Accordingly, each person has a family_role which can be head, spouse, or child. The female spouse is considered being the family head.
+
+The creation of links to parents happens at birth. For children in the starting population, it is assumed that both parents - if present in the household - are biological parents. Immigrant children born abroad try to identify a mother destined to immigrate in the same year. While links to biological parents are kept over life, links to current social parents are removed when leaving home. 
+
+The module contains a collection of functions handling links at specific life-course events:
+
+- doMaintainLinksAtDeath() is called at death. If there is no spouse but children in the household, each child checks if she has a biological mother or father, or a grandmother or grandfather alive, in which case the child links to a new guardian (and - if present - the spouse of this new social parent)
+- doStartUnion() is called at union formation. Partners are linked and dissolve their links to household parents as they now build their own nuclear family. All children update their family links as they now live with two "guardians". (The link to biological parents is kept over life and can be different from the links to the household head and the spouse of the household head). Suppose a union formation happens in the first year after giving birth, and the baby has no biological father assigned. In that case, it is assumed that the male partner is the biological father of the baby.
+- doDissolveUnion()is called when a union is dissolved. Before the link between partners is dissolved, all children have to choose with whom to live. The choice is modelled by a set of simple rules and a probability to stay with the female guardian. If only one of the two guardians is a biological parent, children choose to stay with the biological parent. Otherwise, the choice is random depending on the parameter. 
+- doLeaveParentalHome() is called when leaving home and dissolves the links to the hosehold parents. 
+- doLinkToFamilyAtStart() is called by family members created from the starting population file. It is called at birth. Only actors not being the oldest in the family (who is created first in the simulation) call this function, ensuring that all persons to which links are established are already alive.  
+*/
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Family Links
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//link Person.lBioFather Person.mlBioFatherChildren[];    //EN Biological Father - Children
+//link Person.lBioMother Person.mlBioMotherChildren[];    //EN Biological Mother - Children
+
+//link Person.lHHFather Person.mlHHFatherChildren[];      //EN HH Father - Children
+//link Person.lHHMother Person.mlHHMotherChildren[];      //EN HH Mother - Children
+
+//link Person.lSpouse;                                    //EN Spouses
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Types
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//classification FAM_ROLE                                 //EN Role in family
+//{
+//    FR_HEAD,                                            //EN Head
+//    FR_SPOUSE,                                          //EN Spouse 
+//    FR_CHILD                                            //EN Child
+//};
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Parameters
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//parameters
+//{
+//    double ProbStayWithMother;                          //EN Probability to stay with mother after union dissolution
+//};
+
+//parameter_group PG08_ChildrenChoices                    //EN Childrens choices        
+//{
+//    ProbStayWithMother,
+//    AgeLeavingHome
+//};
+
+//parameter_group PG06_Family                             //EN Family
+//{
+//    PG06_FirstUnion,
+//    PG07_FemalePartnerships,
+//    PG08_ChildrenChoices,
+//    PG09_PartnerMatching
+//};
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Actor states and functions
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//actor Person
+//{
+//    //EN Role in family
+//    FAM_ROLE    family_role = (lSpouse && sex == MALE) ? FR_SPOUSE : (lHHFather || lHHMother) ? FR_CHILD : FR_HEAD;
+//
+//    //EN Children in Household
+//    short children_in_household = (sex == FEMALE) ? sum_over(mlHHMotherChildren, is_alive) 
+//        : sum_over(mlHHFatherChildren, is_alive);
+//
+//
+//    void doStartUnion(Person_ptr ptrPartner);           //EN Start a union
+//    void doDissolveUnion();                             //EN Dissolve a union
+//    void doLeaveParentalHome();                         //EN Leave parental home
+//    void doMaintainLinksAtDeath();                      //EN Search for step-parents etc.
+//    void doLinkToFamilyAtStart();                       //EN Link to family members (those from starting population)
+//};
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Implementation
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void Person::doStartUnion(Person_ptr ptrPartner)
+{
+    // link to partner
+     Set_lSpouse(  ptrPartner );
+    lSpouse -> UpdateTime() -> poStateFunctions->Set_ever_union(  TRUE );
+
+    // leave parental home if still there
+    doLeaveParentalHome(); lSpouse ->UpdateTime()->doLeaveParentalHome();
+    
+    // Partners children in HH now live also with this woman
+    if (lSpouse ->children_in_household )
+    {
+        int nIndex;
+        auto prChild = lSpouse ->mlHHFatherChildren ->GetNext( 0, &nIndex );
+        while ( prChild != NULL )
+        {
+            prChild-> Set_lHHMother(  this );
+            prChild = lSpouse ->mlHHFatherChildren ->GetNext(nIndex + 1, &nIndex);
+        }
+    }
+
+    // Own children in HH now live also with this spouse
+    if (children_in_household )
+    {
+        int nIndex;
+        auto prChild = mlHHMotherChildren ->GetNext( 0, &nIndex );
+        while ( prChild != NULL )
+        {
+            prChild-> Set_lHHFather(  lSpouse  );
+            // if babies without biological father, the spouse becomes biological father
+            if (!prChild-> lBioFather && prChild-> integer_age == 0)
+            {
+                prChild-> Set_lBioFather(  lSpouse  );
+            }
+            prChild = mlHHMotherChildren ->GetNext(nIndex + 1, &nIndex);
+        }
+    }
+}
+
+void Person::doDissolveUnion()
+{
+    // Children deciding with whom to stay
+    if (children_in_household )
+    {
+        int nIndex;
+        bool bStayWithMother = (RandUniform(32) < gprParam->ProbStayWithMother);
+
+        // Those staying with HH mother dissolve link to HH father
+        auto prChild = mlHHMotherChildren ->GetNext(0, &nIndex);
+        while (prChild)
+        {
+            if (bStayWithMother && ((prChild-> lBioMother && prChild-> lBioMother == (Person_ptr)this)
+                || !prChild-> lBioFather || (prChild-> lBioFather && prChild-> lBioFather != lSpouse )))
+            {
+                prChild-> Set_lHHFather(  NULL );
+            }
+            prChild = mlHHMotherChildren ->GetNext(nIndex + 1, &nIndex);
+        }
+
+        // Those staying with HH father dissolve link to HH mother
+        if (lSpouse ->children_in_household )
+        {
+            auto prChild = lSpouse ->mlHHFatherChildren ->GetNext(0, &nIndex);
+            while (prChild)
+            {
+                prChild-> Set_lHHMother(  NULL );
+                prChild = lSpouse ->mlHHFatherChildren ->GetNext(nIndex + 1, &nIndex);
+            }
+        }
+    }
+
+    // Before removing the link to the spouse, check if a first immigration was scheduled for this year by the spouse 
+    // which was not carried out (because the spouse not having been a family head) but now already lies in the past. 
+    // The condition also checks if the event was scheduled in this calendar year, otherwise there would be a timing problem.
+    if (!lSpouse -> ever_resident && lSpouse -> creation_type == CT_SCRATCH && lSpouse -> time_of_first_immigration < 
+        time && int(lSpouse ->time_of_first_immigration ) == calendar_year )  
+    {
+        lSpouse -> UpdateTime() -> poStateFunctions->Set_time_of_first_immigration(  time  ); // set clock to now 
+    }
+
+    // Dissolve link to spouse
+     Set_lSpouse(  NULL );
+}
+
+void Person::doLeaveParentalHome()
+{
+    // Before removing links check if a first immigration was scheduled for this year which was not carried out 
+    // (because not having been a family head) but now already lies in the past. The condition also checks if the 
+    // event was scheduled in this calendar year, otherwise there would be a timing problem.
+    if (! ever_resident &&  creation_type == CT_SCRATCH &&  time_of_first_immigration < 
+        time && int(time_of_first_immigration ) == calendar_year )  
+    {
+         poStateFunctions->Set_time_of_first_immigration(  time  ); // set clock to now 
+    }
+
+    // Remove the links
+     Set_lHHFather(  NULL );  
+     Set_lHHMother(  NULL );  
+}
+
+void Person::doMaintainLinksAtDeath()
+{
+    if (! lSpouse &&  children_in_household > 0)
+    {
+        //try to find somebody for children
+        int nIndex;
+        Person_ptr prGuardian;
+        auto prChild = (sex ==FEMALE) ? mlHHMotherChildren ->GetNext( 0, &nIndex ) : mlHHFatherChildren ->GetNext( 0, &nIndex );
+        while ( prChild )
+        {
+            // Try to identify a potential guardian
+            if ( sex == FEMALE && prChild->lBioFather ) prGuardian = prChild->lBioFather ;      // own biological father
+            else if ( sex == MALE && prChild->lBioMother ) prGuardian = prChild->lBioMother ;   // own biological mother
+            else if (lBioMother ) prGuardian = lBioMother ;                                    // grandmother
+            else if (lBioFather ) prGuardian = lBioFather ;                                    // grandfather
+            else prGuardian = NULL;                                                          // nobody found   
+
+            // If somebody found link to this person - and, if available - the spouse of this person
+            if (prGuardian && prGuardian-> sex == MALE)
+            {
+                prChild-> Set_lHHFather(  prGuardian );
+                if (prGuardian->lSpouse ) prChild-> Set_lHHMother(  prGuardian->lSpouse  );
+            }
+            else if (prGuardian && prGuardian-> sex == FEMALE)
+            {
+                prChild-> Set_lHHMother(  prGuardian );
+                if (prGuardian->lSpouse ) prChild-> Set_lHHFather(  prGuardian->lSpouse  );
+            }
+
+            // set pointer to next child
+            prChild = (sex ==FEMALE) ? mlHHMotherChildren ->GetNext( nIndex+1, &nIndex ) : mlHHFatherChildren ->GetNext( nIndex+1, &nIndex );
+        }
+    }
+     Set_lSpouse(  NULL ); // TODO necessary?
+}
+
+void Person::doLinkToFamilyAtStart()
+{
+    if ( creation_type == CT_START ||  creation_type == CT_POOL)
+    {
+        if (lStartValues ->StartPopValue[PMC_ROLE] == FR_HEAD || lStartValues ->StartPopValue[PMC_ROLE] == FR_SPOUSE)
+        {
+             Set_lSpouse(  ptr_creator );
+        }
+        else if (lStartValues ->StartPopValue[PMC_ROLE] == FR_CHILD && ptr_creator-> sex == MALE)
+        {
+             Set_lHHFather(  ptr_creator );
+             Set_lBioFather(  ptr_creator );
+        }
+        else if (lStartValues ->StartPopValue[PMC_ROLE] == FR_CHILD && ptr_creator-> sex == FEMALE)
+        {
+             Set_lHHMother(  ptr_creator );
+             Set_lBioMother(  ptr_creator );
+            lBioMother ->UpdateTime()->doIncreaseParity();
+             poStateFunctions->Set_mother_age_at_birth(  lBioMother ->UpdateTime() -> age  );
+        }
+    }
+    else if ( creation_type == CT_BIRTH)
+    {
+         Set_lHHMother(  ptr_creator );
+         Set_lBioMother(  ptr_creator );
+        if (lHHMother ->lSpouse )
+        {
+             Set_lHHFather(  lHHMother ->lSpouse  );
+             Set_lBioFather(  lHHMother ->lSpouse  );
+        }
+    }
+}
+} // namespace 
